@@ -1,5 +1,5 @@
 from django.db import models
-
+import requests
  
 class Tbl_Clientes(models.Model):
     nome_completo_cliente = models.CharField(max_length=200)
@@ -19,7 +19,12 @@ class Tbl_Enderecos(models.Model):
     cidade = models.CharField(max_length=200)
     estado = models.CharField(max_length=200)
     pais = models.CharField(max_length=200)
-    cliente = models.ForeignKey(Tbl_Clientes, on_delete=models.CASCADE)
+    cliente_id = cliente_id = models.IntegerField()
+
+    @property
+    def cliente(self):
+        url_cliente = "http://localhost:8000/clientes_api/" + str(self.cliente_id) + "/"
+        return requests.get(url_cliente, auth=('admin','admin')).json()
 
     def __str__(self):
         return self.rua + ', ' + self.numero

@@ -4,9 +4,25 @@ from .models import Tbl_Clientes, Tbl_Enderecos
 class Tbl_ClientesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Tbl_Clientes
-        fields = '__all__'
+        fields = [
+            'nome_completo_cliente', 
+            'cpf', 
+            'email',
+            'data_nascimento',
+            'numero_telefone',
+        ]
 
 class Tbl_EnderecosSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Tbl_Enderecos
-        fields = '__all__'
+        fields = [
+            'rua', 
+            'numero', 
+            'complemento',
+            'cep',
+            'cidade',
+            'estado',
+            'pais',
+            'cliente',
+        ]
+        depth = 1
