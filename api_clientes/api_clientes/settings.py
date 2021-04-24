@@ -25,7 +25,7 @@ SECRET_KEY = 'q!vbv42goaddy^pxqen_=mw7g4wif$9q8ivjs!rqy=#c$9_c$4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['172.19.240.1', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
