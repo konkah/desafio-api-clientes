@@ -7,6 +7,7 @@ class Tbl_Clientes(models.Model):
     email = models.CharField(max_length=200)
     data_nascimento = models.DateField()
     numero_telefone = models.CharField(max_length=15)
+    deletado = models.BooleanField()
 
     def __str__(self):
         return self.nome_completo_cliente
@@ -20,6 +21,7 @@ class Tbl_Enderecos(models.Model):
     estado = models.CharField(max_length=200)
     pais = models.CharField(max_length=200)
     cliente_id = cliente_id = models.IntegerField()
+    deletado = models.BooleanField()
 
     @property
     def cliente(self):
