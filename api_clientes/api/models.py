@@ -36,7 +36,7 @@ class Tbl_Enderecos(models.Model):
     '''
     @property
     def cliente(self):
-        url_cliente = "http://localhost:8000/clientes_api/" + str(self.cliente_id) + "/"
+        url_cliente = "http://localhost/clientes_api/" + str(self.cliente_id) + "/"
         return requests.get(url_cliente, auth=('admin','admin')).json()
 
     '''

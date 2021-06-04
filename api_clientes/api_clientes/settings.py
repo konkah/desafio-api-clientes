@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'api_clientes.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 import os
-rds_name = os.environ.get('CLIENTES_RDS_NAME')
+rds_name = os.environ.get('CLIENTES_RDS')
 
 DATABASES = {
     'default': {
