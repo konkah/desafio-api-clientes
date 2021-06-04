@@ -75,13 +75,16 @@ WSGI_APPLICATION = 'api_clientes.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+import os
+rds_name = os.environ.get('CLIENTES_RDS_NAME')
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'api_clientes',
-        'USER': 'root',
+        'NAME': 'aws_rds_clientes',
+        'USER': 'user',
         'PASSWORD': 'PassworD',
-        'HOST': 'localhost',
+        'HOST': rds_name,
         'PORT': '3306',
     }
 }
