@@ -59,6 +59,7 @@ class Tbl_EnderecosSerializer(serializers.ModelSerializer):
             'estado',
             'pais',
             'cliente',
+            'cliente_id',
             'deletado',
         ]
     
