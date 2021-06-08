@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import Tbl_Clientes, Tbl_Enderecos
 from .serializers import Tbl_ClientesSerializer, Tbl_EnderecosSerializer
 from rest_framework import viewsets
+from rest_framework.decorators import action
+from rest_framework.response import Response
 
 
 '''
